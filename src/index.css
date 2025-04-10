@@ -1,0 +1,240 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+:root{
+  --button_color: #FACA10;
+  --font_color:#1E1E1E;
+  --white_color:#fff;
+  --fist_bgcolor:#FBFBFB;
+  --secend_bgcolor:#f2f2f2;
+  --Nunito:"Nunito", serif;
+  --Lora:"Lora", serif;
+}
+
+
+@layer base{
+  
+  *{
+    @apply m-0 p-0 outline-none box-border;
+  }
+  ul,ol,li{
+    @apply list-none
+  }
+  a{
+    @apply no-underline inline-block
+  }
+  img{
+    @apply align-middle
+  }
+  .container{
+    @apply m-auto;
+  }
+}
+
+@layer components{
+  .menu::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--button_color);
+    transition: all linear 0.3s;
+    -webkit-transition: all linear 0.3s;
+    -moz-transition: all linear 0.3s;
+    -ms-transition: all linear 0.3s;
+    -o-transition: all linear 0.3s;
+}
+  .menu:hover::after{
+    width: 100%;
+  }
+  .btn{
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
+  .btn::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    border-radius: 2px;
+    right: 0;
+    background-color: var(--button_color);
+    transition: all linear 0.3s;
+    -webkit-transition: all linear 0.3s;
+    -moz-transition: all linear 0.3s;
+    -ms-transition: all linear 0.3s;
+    -o-transition: all linear 0.3s;
+    z-index: -1;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+.btn:hover::after{
+  width: 0;
+}
+.btn:hover{
+  
+  color: var(--font_color);
+}
+.Bbtn::after{
+left: 0;
+}
+.slider{
+  width: 240px !important;
+  height: 120px;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  background: #f6f6f6;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  margin: 10px;
+}
+.slick-current .slider{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  animation: animeted 0.3s ;
+  -webkit-animation: animeted 3s infinite;
+}
+@keyframes animeted {
+  0%{
+    filter: hue-rotate(3);
+    -webkit-filter: hue-rotate(3);
+}
+100%{
+  filter: hue-rotate(720deg);
+  -webkit-filter: hue-rotate(720deg);
+}
+}
+.botton{
+  transition: ease-in-out 0.4s;
+  -webkit-transition: ease-in-out 0.4s;
+  -moz-transition: ease-in-out 0.4s;
+  -ms-transition: ease-in-out 0.4s;
+  -o-transition: ease-in-out 0.4s;
+}
+.botton::after{
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  width: 0;
+  height: 3px;
+  background: transparent;
+  
+  transition: ease-in-out 0.4s;
+}
+.botton::before{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  width: 22px;
+  height: 22px;;
+  border-radius: 50%;
+  background: transparent;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  
+  transition: ease-in-out 0.4s;
+}
+.botton:hover{
+  background: var(--button_color);
+  color: var(--white_color);
+}
+.botton:hover::after{
+  background: var(--button_color);
+  width: 50px;
+}
+.botton:hover::before{
+  background: var(--button_color);
+  left: -50px;
+}
+.slidercard{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+.silderContent{
+  display: none;
+}
+.slick-current .sliderImg {
+  width: 204px;
+  height: 204px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rgba(250, 203, 16, 0.404);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  position: relative;
+  transform: scale(1.01);
+  z-index: 1;
+  -webkit-transform: scale(1.01);
+  -moz-transform: scale(1.01);
+  -ms-transform: scale(1.01);
+  -o-transform: scale(1.01);
+  padding: 0;
+}
+.slick-current .sliderImg::after{
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 180px;
+  height: 180px;
+  padding: 12px;
+  border: 2px solid var(--button_color);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  opacity: 0.4;
+  z-index: -1;
+}
+.slick-current .sliderImg::before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 18px;
+  width: 50px;
+  height: 50px;
+  background: url(./assets/tesmonial/coma.png);
+}
+.slick-current .silderContent {
+  display: block;
+  width: 840px;
+  text-align: center;
+}
+
+}
